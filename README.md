@@ -1,6 +1,6 @@
-# OpenAI to Llama 3 AI
+# OpenAI embedding to Cloudflare AI
 
-This is example of using [Workers AI](https://developers.cloudflare.com/workers-ai/). This Cloudflare Worker provides a Base URL which allows you to make AI calls to the @cf/meta/llama-3-8b-instruct model using an OpenAI client.
+This is example of using [Workers AI](https://developers.cloudflare.com/workers-ai/). This Cloudflare Worker provides a Base URL which allows you to make AI calls to the @cf/baai/bge-small-en-v1.5 model using an OpenAI client.
 
 ## Usage
 
@@ -23,26 +23,22 @@ client = OpenAI::Client.new(
 response = client.chat(
   parameters: {
     model: 'gpt-4-turbo', #This is ignored in this example
-    messages: [
+    input: [
       {
-        role: 'system', content: 'You are a helpful assistant'
+        'You are a helpful assistant'
       },
       {
-        role: 'user', content: 'What is 3 * 10?'
+        'What is 3 * 10?'
       }
     ]
   }
 )
 
-puts response.dig('choices', 0, 'message', 'content')
+puts response.dig('data', 0, 'embedding')
 ```
 
-
-## Author
-
-Jack Culpan <https://github.com/jackculpan>.
 
 ## License
 
 MIT
-# openai-to-cloudflare-ai
+# openai-embedding-to-cloudflare-ai
