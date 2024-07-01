@@ -1,0 +1,6 @@
+name = "openai-cf-embedding-forwarder"
+compatibility_date = "2023-09-20"
+main = "src/index.tsx"
+
+[ai]
+binding = "AI"
