@@ -19,20 +19,18 @@ export default {
       });
 
       const response = {
-        object: "list",
-        data: [
+        "object": "list",
+        "data": [
           {
-            object: "embedding",
-            index: 0,
-            embedding: [
-              embeddings.data,
-            ]
+            "object": "embedding",
+            "index": 0,
+            "embedding": embeddings.data,
           }
         ],
-        model: "text-embedding-3-small",
-        usage: {
-          prompt_tokens: 0,
-          total_tokens: 0
+        "model": "text-embedding-3-small",
+        "usage": {
+          "prompt_tokens": 0,
+          "total_tokens": 0
         }
       };
 
